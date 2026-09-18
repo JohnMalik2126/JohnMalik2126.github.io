@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: invitations-bot
+    runtime: node
+    plan: starter
+    region: frankfurt
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    disk:
+      name: invitations-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: BASE_URL
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: DB_PATH
+        value: /var/data/data.sqlite3
+      - key: INVITATION_TTL_DAYS
+        value: 365
+      - key: DEFAULT_TIMEZONE
+        value: UTC

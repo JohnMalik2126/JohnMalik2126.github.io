@@ -40,6 +40,25 @@ This repository now includes:
    npm start
    ```
 
+## Public deployment (Render, fully accessible)
+
+This repo now includes `/home/runner/work/JohnMalik2126.github.io/JohnMalik2126.github.io/render.yaml` for one-click Render deployment.
+
+1. Push this repository to GitHub (already done if you're using it there).
+2. In Render, choose **New +** → **Blueprint** and select this repository.
+3. Render will create the `invitations-bot` web service with persistent disk storage.
+4. In Render service environment, set:
+   - `BASE_URL=https://<your-render-domain>`
+   - `TELEGRAM_BOT_TOKEN=<your-bot-token>`
+5. Deploy/redeploy the service.
+6. Open `https://<your-render-domain>/health` and confirm `{"ok":true}`.
+7. In Telegram, open your bot and send `/start`.
+
+Notes:
+- Database is persisted at `/var/data/data.sqlite3` on Render disk.
+- Anyone with a generated invitation link can open it publicly.
+- If you use a custom domain, update `BASE_URL` to that domain and redeploy.
+
 ## API
 
 - `GET /health`
