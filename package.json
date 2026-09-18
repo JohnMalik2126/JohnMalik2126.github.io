@@ -1,0 +1,25 @@
+{
+  "name": "johnmalik2126.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "node --test",
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://localhost:26831/JohnMalik2126/JohnMalik2126.github.io"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^18.0.0",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "node-telegram-bot-api": "^2.1.0"
+  }
+}
